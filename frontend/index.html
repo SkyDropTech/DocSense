@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocSense - AI Document Summarizer</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>DocSense</h1>
+            <p>Smart, instant document summaries.</p>
+        </header>
+
+        <main>
+            <div class="upload-box" id="drop-zone">
+                <input type="file" id="file-input" accept=".pdf,.docx,.txt" hidden>
+                <div class="upload-content">
+                    <svg class="upload-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
+                    <h3>Click or drag document to upload</h3>
+                    <p>Supports PDF, DOCX, TXT</p>
+                    <button class="btn" onclick="document.getElementById('file-input').click()">Browse Files</button>
+                </div>
+            </div>
+
+            <div id="loading" class="hidden">
+                <div class="spinner"></div>
+                <p>Analyzing and summarizing document...</p>
+            </div>
+
+            <div id="results" class="results-card hidden">
+                <div class="doc-info">
+                    <h3>Document Details</h3>
+                    <p><strong>Name:</strong> <span id="res-name"></span></p>
+                    <p><strong>Type:</strong> <span id="res-type"></span></p>
+                    <p><strong>Words:</strong> <span id="res-words"></span></p>
+                </div>
+                
+                <div class="summary-box">
+                    <h3>AI Summary</h3>
+                    <p id="res-summary"></p>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>
